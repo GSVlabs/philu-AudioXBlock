@@ -30,7 +30,7 @@ regex = re.compile(
 
 class AudioXBlock(XBlock):
     """
-    This XBlock will play an MP3 file as an HTML5 audio element. 
+    This XBlock will play an MP3 file as an HTML5 audio element.
     """
 
     # Fields are defined on the class.  You can access them in your code as
@@ -108,7 +108,7 @@ class AudioXBlock(XBlock):
             else:
                 try:
                     mime = MimeTypes()
-                    file = urllib.pathname2url(transcript_src)
+                    file = urllib.request.pathname2url(transcript_src)
                     content_type, jj = mime.guess_type(file)
 
                     if "text/plain" != content_type:
@@ -184,7 +184,7 @@ class AudioXBlock(XBlock):
 
         request_post = MultiDict(request.POST)
         response_data = self.handle_ajax(suffix, request_post)
-        return Response(response_data, content_type='application/json')
+        return Response(response_data.encode('utf-8'), content_type='application/json')
 
     def handle_ajax(self, dispatch, data):
         """
@@ -223,10 +223,10 @@ class AudioXBlock(XBlock):
         return [
             ("AudioXBlock",
              """<vertical_demo>
-                    <audio src="https://upload.wikimedia.org/wikipedia/en/4/45/ACDC_-_Back_In_Black-sample.ogg" 
+                    <audio src="https://upload.wikimedia.org/wikipedia/en/4/45/ACDC_-_Back_In_Black-sample.ogg"
                     transcript_src="http://humanstxt.org/humans.txt"
                     downloadable_src="sample.mp3"> </audio>
-                    <audio src="" 
+                    <audio src=""
                     transcript_src=""
                     downloadable_src=""> </audio>
                  </vertical_demo>
