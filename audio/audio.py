@@ -9,7 +9,7 @@ from xmodule.fields import RelativeTime
 
 from xblock.core import XBlock
 from xblock.fields import Scope, Integer, String, Integer, Boolean
-from xblock.fragment import Fragment
+from web_fragments.fragment import Fragment
 from webob.multidict import MultiDict
 from webob import Response
 from mimetypes import MimeTypes
