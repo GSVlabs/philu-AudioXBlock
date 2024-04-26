@@ -15,4 +15,5 @@ Unreleased
 Fixed
 =====
 
+* Fixing outdated imports `PhU-113 <https://youtrack.raccoongang.com/issue/PhU-113>`_
 * Adopt AudioXBlock for the Quince release `PhU-113 <https://youtrack.raccoongang.com/issue/PhU-113>`_
