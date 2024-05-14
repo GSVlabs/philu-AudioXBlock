@@ -12,7 +12,7 @@ from xblock.fields import Scope, Integer, String, Integer, Boolean
 from web_fragments.fragment import Fragment
 from webob.multidict import MultiDict
 from webob import Response
-from mimetypes import MimeTypes
+import mimetypes
 import urllib
 import re
 from xblockutils.resources import ResourceLoader
@@ -107,13 +107,12 @@ class AudioXBlock(XBlock):
                 is_transcript_url_valid = False
             else:
                 try:
-                    mime = MimeTypes()
                     file = urllib.request.pathname2url(transcript_src)
-                    content_type, jj = mime.guess_type(file)
-
-                    if "text/plain" != content_type:
+                    content_type, jj = mimetypes.guess_type(file)
+                    if content_type not in ["text/plain", "application/x-subrip"]:
                         transcript_src = ''
                         is_transcript_url_valid = False
+
                 except:
                     transcript_src = ''
                     is_transcript_url_valid = False

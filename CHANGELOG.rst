@@ -15,5 +15,6 @@ Unreleased
 Fixed
 =====
 
+* srt transcripts working correctly `PhU-266 <https://youtrack.raccoongang.com/issue/PhU-266>`_
 * Fixing outdated imports `PhU-113 <https://youtrack.raccoongang.com/issue/PhU-113>`_
 * Adopt AudioXBlock for the Quince release `PhU-113 <https://youtrack.raccoongang.com/issue/PhU-113>`_
