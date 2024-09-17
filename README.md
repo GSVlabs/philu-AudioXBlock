@@ -1,3 +1,5 @@
+This repo is part of the philu set of repos, that create the philanthropyu.org website
+
 AudioXBlock
 
 This is a simple XBlock which will play audio files as an HTML5 audio
